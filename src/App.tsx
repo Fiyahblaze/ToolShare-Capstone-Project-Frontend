@@ -1,8 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import HomePage from "./pages/HomePage";
+import LoginPage from "./pages/LoginPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFoundPage from "./pages/NotFoundPage";
+
+
 
 export default function App() {
   return (
@@ -20,15 +23,7 @@ export default function App() {
           }
         />
 
-        <Route
-          path="login"
-          element={
-            <PlaceholderPage
-              title="Welcome back"
-              description="Log in to manage your tools and rental requests."
-            />
-          }
-        />
+        <Route path="login" element={<LoginPage />} />
 
         <Route
           path="register"
