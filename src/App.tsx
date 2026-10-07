@@ -1,12 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
+import ProtectedRoute from "./components/ProtectedRoute";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFoundPage from "./pages/NotFoundPage";
-import RegisterPage from "./pages/RegisterPage";
-
-
 
 export default function App() {
   return (
@@ -25,20 +24,19 @@ export default function App() {
         />
 
         <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
 
-        <Route path="register" element={<RegisterPage />
-        } 
-        />
-
-        <Route
-          path="dashboard"
-          element={
-            <PlaceholderPage
-              title="Your Dashboard"
-              description="Your listings and rental requests will appear here."
-            />
-          }
-        />
+        <Route element={<ProtectedRoute />}>
+          <Route
+            path="dashboard"
+            element={
+              <PlaceholderPage
+                title="Your Dashboard"
+                description="Your listings and rental requests will appear here."
+              />
+            }
+          />
+        </Route>
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>

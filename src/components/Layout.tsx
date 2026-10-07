@@ -1,7 +1,21 @@
-import { Link, NavLink, Outlet } from "react-router-dom";
+import {
+  Link,
+  NavLink,
+  Outlet,
+  useNavigate,
+} from "react-router-dom";
 import { Wrench } from "lucide-react";
+import useAuth from "../hooks/useAuth";
 
 export default function Layout() {
+  const { user, loading, logout } = useAuth();
+  const navigate = useNavigate();
+
+  function handleLogout() {
+    logout();
+    navigate("/login", { replace: true });
+  }
+
   return (
     <>
       <header className="site-header">
@@ -13,10 +27,31 @@ export default function Layout() {
 
           <div className="nav-links">
             <NavLink to="/tools">Browse Tools</NavLink>
-            <NavLink to="/login">Log In</NavLink>
-            <NavLink to="/register" className="button button-primary">
-              Sign Up
-            </NavLink>
+
+            {loading ? (
+              <span role="status">Checking session...</span>
+            ) : user ? (
+              <>
+                <NavLink to="/dashboard">Dashboard</NavLink>
+                <button
+                  type="button"
+                  className="button button-secondary"
+                  onClick={handleLogout}
+                >
+                  Log Out
+                </button>
+              </>
+            ) : (
+              <>
+                <NavLink to="/login">Log In</NavLink>
+                <NavLink
+                  to="/register"
+                  className="button button-primary"
+                >
+                  Sign Up
+                </NavLink>
+              </>
+            )}
           </div>
         </nav>
       </header>
