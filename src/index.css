@@ -427,3 +427,15 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+.listing-page {
+  padding-top: 32px;
+}
+
+.listing-form-card {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.listing-form-card h1 {
+  font-size: clamp(30px, 5vw, 42px);
+}

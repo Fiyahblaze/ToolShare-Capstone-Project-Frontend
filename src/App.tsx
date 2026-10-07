@@ -8,6 +8,8 @@ import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ToolsPage from "./pages/ToolsPage";
 import ToolDetailsPage from "./pages/ToolDetailsPage";
+import CreateToolPage from "./pages/CreateToolPage";
+
 
 export default function App() {
   return (
@@ -20,6 +22,20 @@ export default function App() {
 
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
+
+<Route element={<ProtectedRoute />}>
+  <Route path="tools/new" element={<CreateToolPage />} />
+
+  <Route
+    path="dashboard"
+    element={
+      <PlaceholderPage
+        title="Your Dashboard"
+        description="Your listings and rental requests will appear here."
+      />
+    }
+  />
+</Route>
 
         <Route element={<ProtectedRoute />}>
           <Route

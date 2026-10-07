@@ -33,6 +33,7 @@ export default function Layout() {
             ) : user ? (
               <>
                 <NavLink to="/dashboard">Dashboard</NavLink>
+                <NavLink to="/tools/new">List a Tool</NavLink>
                 <button
                   type="button"
                   className="button button-secondary"
