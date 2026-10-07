@@ -282,3 +282,91 @@ button:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+.tool-details-link {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.tool-details-page {
+  padding-top: 32px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  color: #246443;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.tool-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  background: #ffffff;
+  border: 1px solid #e3e7df;
+  border-radius: 20px;
+}
+
+.tool-details-image {
+  height: 100%;
+  min-height: 360px;
+}
+
+.tool-details-body {
+  padding: clamp(24px, 4vw, 40px);
+}
+
+.tool-details h1 {
+  font-size: clamp(30px, 4vw, 42px);
+}
+
+.tool-description {
+  margin: 24px 0;
+  color: #536458;
+  line-height: 1.7;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.tool-facts {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+
+.tool-facts div {
+  display: grid;
+  grid-template-columns: 100px minmax(0, 1fr);
+  gap: 16px;
+}
+
+.tool-facts dt {
+  color: #536458;
+}
+
+.tool-facts dd {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.tool-details-page .content-card .button {
+  margin-top: 20px;
+}
+
+@media (max-width: 700px) {
+  .tool-details {
+    grid-template-columns: 1fr;
+  }
+
+  .tool-details-image {
+    min-height: 240px;
+    height: 240px;
+  }
+}

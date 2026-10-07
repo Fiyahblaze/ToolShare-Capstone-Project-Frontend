@@ -7,30 +7,21 @@ import RegisterPage from "./pages/RegisterPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ToolsPage from "./pages/ToolsPage";
-
+import ToolDetailsPage from "./pages/ToolDetailsPage";
 
 export default function App() {
   return (
     <Routes>
       <Route element={<Layout />}>
-        <Route index element={<HomePage />
-      } 
-      />
+        <Route index element={<HomePage />} />
 
-        <Route path="tools" element={<ToolsPage />
-      } 
-      />
+        <Route path="tools" element={<ToolsPage />} />
+        <Route path="tools/:id" element={<ToolDetailsPage />} />
 
-        <Route path="login" element={<LoginPage />
-      } 
-      />
-        <Route path="register" element={<RegisterPage />
-      } 
-      />
+        <Route path="login" element={<LoginPage />} />
+        <Route path="register" element={<RegisterPage />} />
 
-        <Route element={<ProtectedRoute />
-      }
-      >
+        <Route element={<ProtectedRoute />}>
           <Route
             path="dashboard"
             element={

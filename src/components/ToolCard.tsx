@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MapPin, Wrench } from "lucide-react";
 import type { Tool } from "../types/tool";
+import { Link } from "react-router-dom";
 
 export default function ToolCard({ tool }: { tool: Tool }) {
   const [imageFailed, setImageFailed] = useState(false);
@@ -46,6 +47,12 @@ export default function ToolCard({ tool }: { tool: Tool }) {
             {tool.available ? "Available" : "Unavailable"}
           </span>
         </div>
+        <Link
+  to={`/tools/${tool._id}`}
+  className="button button-secondary tool-details-link"
+>
+  View Details
+</Link>
       </div>
     </article>
   );
