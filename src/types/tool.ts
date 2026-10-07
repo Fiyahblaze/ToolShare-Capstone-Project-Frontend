@@ -23,3 +23,14 @@ export interface ToolsResponse {
 export interface ToolResponse {
   tool: Tool;
 }
+
+export interface ToolFormValues {
+  name: string;
+  description: string;
+  category: string;
+  condition: string;
+  dailyRate: number;
+  location: string;
+  imageUrl: string;
+  available: boolean;
+}

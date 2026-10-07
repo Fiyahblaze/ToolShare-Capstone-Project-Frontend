@@ -370,3 +370,60 @@ button:focus-visible {
     height: 240px;
   }
 }
+.tool-form-fields {
+  display: grid;
+  gap: 20px;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.form-field textarea,
+.form-field select {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #cbd5cc;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #20382b;
+  font: inherit;
+}
+
+.form-field textarea {
+  resize: vertical;
+}
+
+.form-field textarea:focus-visible,
+.form-field select:focus-visible {
+  outline: 3px solid #d6e8d5;
+  border-color: #246443;
+}
+
+.form-field small {
+  color: #536458;
+}
+
+.checkbox-field {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.checkbox-field input {
+  width: 18px;
+  height: 18px;
+  accent-color: #246443;
+}
+
+@media (max-width: 600px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
