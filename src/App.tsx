@@ -6,6 +6,9 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ToolsPage from "./pages/ToolsPage";
+import ToolDetailsPage from "./pages/ToolDetailsPage";
+import CreateToolPage from "./pages/CreateToolPage";
 
 export default function App() {
   return (
@@ -13,20 +16,15 @@ export default function App() {
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
 
-        <Route
-          path="tools"
-          element={
-            <PlaceholderPage
-              title="Browse Tools"
-              description="Find the right tool for your next project."
-            />
-          }
-        />
+        <Route path="tools" element={<ToolsPage />} />
+        <Route path="tools/:id" element={<ToolDetailsPage />} />
 
         <Route path="login" element={<LoginPage />} />
         <Route path="register" element={<RegisterPage />} />
 
         <Route element={<ProtectedRoute />}>
+          <Route path="tools/new" element={<CreateToolPage />} />
+
           <Route
             path="dashboard"
             element={

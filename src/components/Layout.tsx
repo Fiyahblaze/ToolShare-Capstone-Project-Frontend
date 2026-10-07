@@ -26,13 +26,17 @@ export default function Layout() {
           </Link>
 
           <div className="nav-links">
-            <NavLink to="/tools">Browse Tools</NavLink>
+            <NavLink to="/tools" end>
+              Browse Tools
+            </NavLink>
 
             {loading ? (
               <span role="status">Checking session...</span>
             ) : user ? (
               <>
                 <NavLink to="/dashboard">Dashboard</NavLink>
+                <NavLink to="/tools/new">List a Tool</NavLink>
+
                 <button
                   type="button"
                   className="button button-secondary"
