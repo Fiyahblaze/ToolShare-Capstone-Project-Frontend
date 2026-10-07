@@ -4,7 +4,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-import PlaceholderPage from "./pages/PlaceholderPage";
+import DashboardPage from "./pages/DashboardPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import ToolsPage from "./pages/ToolsPage";
 import ToolDetailsPage from "./pages/ToolDetailsPage";
@@ -24,16 +24,7 @@ export default function App() {
 
         <Route element={<ProtectedRoute />}>
           <Route path="tools/new" element={<CreateToolPage />} />
-
-          <Route
-            path="dashboard"
-            element={
-              <PlaceholderPage
-                title="Your Dashboard"
-                description="Your listings and rental requests will appear here."
-              />
-            }
-          />
+          <Route path="dashboard" element={<DashboardPage />} />
         </Route>
 
         <Route path="*" element={<NotFoundPage />} />

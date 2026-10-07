@@ -1,4 +1,5 @@
 import {
+  useCallback,
   useEffect,
   useState,
   type ReactNode,
@@ -85,11 +86,11 @@ export default function AuthProvider({
     saveSession(data);
   }
 
-  function logout() {
-    sessionStorage.removeItem(TOKEN_KEY);
-    setToken(null);
-    setUser(null);
-  }
+  const logout = useCallback(() => {
+  sessionStorage.removeItem(TOKEN_KEY);
+  setToken(null);
+  setUser(null);
+}, []);
 
   return (
     <AuthContext.Provider
