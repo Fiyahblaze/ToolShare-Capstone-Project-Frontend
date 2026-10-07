@@ -4,6 +4,7 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import PlaceholderPage from "./pages/PlaceholderPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import RegisterPage from "./pages/RegisterPage";
 
 
 
@@ -25,14 +26,8 @@ export default function App() {
 
         <Route path="login" element={<LoginPage />} />
 
-        <Route
-          path="register"
-          element={
-            <PlaceholderPage
-              title="Join ToolShare"
-              description="Create an account to start sharing and renting tools."
-            />
-          }
+        <Route path="register" element={<RegisterPage />
+        } 
         />
 
         <Route
