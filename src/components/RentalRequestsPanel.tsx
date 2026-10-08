@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { ApiError, apiRequest } from "../services/api";
+import OwnerRequestActions from "./OwnerRequestActions";
 import type {
   RentalRequest,
   RentalRequestsResponse,
@@ -155,8 +156,15 @@ export default function RentalRequestsPanel({
                   {formatDate(request.endDate)}
                 </p>
 
-                {request.message && (
+                                {request.message && (
                   <p className="request-message">{request.message}</p>
+                )}
+
+                {direction === "incoming" && (
+                  <OwnerRequestActions
+                    request={request}
+                    onChanged={() => setAttempt((value) => value + 1)}
+                  />
                 )}
               </article>
             );
