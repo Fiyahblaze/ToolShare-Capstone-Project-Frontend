@@ -450,3 +450,30 @@ button:focus-visible {
 .dashboard-tool .tool-card {
   flex: 1;
 }
+
+.button-danger {
+  background: #fff0ed;
+  color: #a12b20;
+  border-color: #edc9c3;
+}
+
+.button-danger:hover {
+  background: #fbe0da;
+}
+
+.delete-listing {
+  display: grid;
+  gap: 12px;
+}
+
+.delete-listing > p {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.listing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
