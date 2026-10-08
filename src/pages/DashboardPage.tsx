@@ -5,6 +5,8 @@ import useAuth from "../hooks/useAuth";
 import { ApiError, apiRequest } from "../services/api";
 import type { Tool, ToolsResponse } from "../types/tool";
 import DeleteToolButton from "../components/DeleteToolButton";
+import RentalRequestsPanel from "../components/RentalRequestsPanel";
+
 
 
 export default function DashboardPage() {
@@ -112,7 +114,7 @@ export default function DashboardPage() {
               >
                 Edit Listing
               </Link>
-              
+
               <DeleteToolButton
                  toolId={tool._id}
                  toolName={tool.name}
@@ -123,7 +125,10 @@ export default function DashboardPage() {
             </div>
           ))}
         </div>
-      )}
+           )}
+
+      <RentalRequestsPanel direction="outgoing" />
+      <RentalRequestsPanel direction="incoming" />
     </section>
   );
 }
