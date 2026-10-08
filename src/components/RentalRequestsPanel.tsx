@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { ApiError, apiRequest } from "../services/api";
 import OwnerRequestActions from "./OwnerRequestActions";
+import BorrowerRequestActions from "./BorrowerRequestActions";
+
 import type {
   RentalRequest,
   RentalRequestsResponse,
@@ -162,6 +164,13 @@ export default function RentalRequestsPanel({
 
                 {direction === "incoming" && (
                   <OwnerRequestActions
+                    request={request}
+                    onChanged={() => setAttempt((value) => value + 1)}
+                  />
+                )}
+
+                {direction === "outgoing" && (
+                  <BorrowerRequestActions
                     request={request}
                     onChanged={() => setAttempt((value) => value + 1)}
                   />
