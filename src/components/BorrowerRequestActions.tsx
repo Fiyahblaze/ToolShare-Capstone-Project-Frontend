@@ -2,6 +2,8 @@ import { useState } from "react";
 import useAuth from "../hooks/useAuth";
 import { ApiError, apiRequest } from "../services/api";
 import type { RentalRequest } from "../types/rentalRequest";
+import EditRentalRequest from "./EditRentalRequest";
+
 
 interface BorrowerRequestActionsProps {
   request: RentalRequest;
@@ -65,6 +67,13 @@ export default function BorrowerRequestActions({
 
   return (
     <div className="borrower-actions">
+      {!confirming && (
+        <EditRentalRequest
+          request={request}
+          onChanged={onChanged}
+        />
+      )}
+
       {confirming ? (
         <>
           <p>
