@@ -585,3 +585,189 @@ button:focus-visible {
   background: #f1f1ed;
   color: #66665e;
 }
+
+/* Forms and feedback */
+.auth-card {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.auth-form,
+.form-field {
+  display: grid;
+  gap: 10px;
+}
+
+.auth-form {
+  gap: 20px;
+}
+
+.form-field {
+  min-width: 0;
+}
+
+.form-field label {
+  font-weight: 600;
+}
+
+.form-field input {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 12px 14px;
+  border: 1px solid #cbd5cc;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #20382b;
+  font: inherit;
+}
+
+.form-field input:focus-visible {
+  outline: 3px solid #d6e8d5;
+  border-color: #246443;
+}
+
+.form-field textarea {
+  min-height: 120px;
+}
+
+.form-error {
+  color: #a12b20;
+  line-height: 1.6;
+}
+
+.rental-card .form-error {
+  color: #a12b20;
+}
+
+.form-success {
+  color: #246443;
+  line-height: 1.6;
+}
+
+.button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.button-secondary:hover {
+  background: #eef4ec;
+}
+
+/* Dashboard and request actions */
+.dashboard-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.borrower-actions {
+  display: grid;
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.request-edit-form {
+  padding: 20px;
+  border: 1px solid #d8e3d5;
+  border-radius: 12px;
+  background: #f8faf6;
+}
+
+.request-edit-form h4 {
+  margin: 0 0 18px;
+  font-size: 18px;
+}
+
+.request-edit-form > .button {
+  margin-top: 16px;
+}
+
+/* Prevent long names and content from stretching cards */
+.tool-details {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.tool-details-body,
+.tool-card,
+.rental-card {
+  min-width: 0;
+}
+
+.tool-card h2,
+.tool-details h1,
+.rental-card h3,
+.rental-card p {
+  overflow-wrap: anywhere;
+}
+
+.tool-location svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 700px) {
+  .tool-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .site-nav {
+    padding: 16px;
+  }
+
+  .page-container {
+    padding: 0 16px 40px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a:not(.button) {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+
+  .page-heading {
+    margin: 32px 0 24px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .rental-card,
+  .tool-card-body {
+    padding: 20px;
+  }
+
+  .request-edit-form {
+    padding: 16px;
+  }
+
+  .hero-actions .button,
+  .button-group .button,
+  .listing-actions .button {
+    flex: 1 1 150px;
+  }
+
+  .dashboard-heading > .button {
+    width: 100%;
+  }
+
+  .tool-facts div {
+    grid-template-columns: 80px minmax(0, 1fr);
+    gap: 12px;
+  }
+}
