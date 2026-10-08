@@ -4,6 +4,7 @@ import useAuth from "../hooks/useAuth";
 import { ApiError, apiRequest } from "../services/api";
 import OwnerRequestActions from "./OwnerRequestActions";
 import BorrowerRequestActions from "./BorrowerRequestActions";
+import ReturnRequestButton from "./ReturnRequestButton";
 
 import type {
   RentalRequest,
@@ -158,16 +159,19 @@ export default function RentalRequestsPanel({
                   {formatDate(request.endDate)}
                 </p>
 
-                                {request.message && (
-                  <p className="request-message">{request.message}</p>
-                )}
-
                 {direction === "incoming" && (
-                  <OwnerRequestActions
-                    request={request}
-                    onChanged={() => setAttempt((value) => value + 1)}
-                  />
-                )}
+                 <>
+                <OwnerRequestActions
+                 request={request}
+                 onChanged={() => setAttempt((value) => value + 1)}
+                />
+
+                <ReturnRequestButton
+                request={request}
+               onChanged={() => setAttempt((value) => value + 1)}
+                />
+                </>
+              )}
 
                 {direction === "outgoing" && (
                   <BorrowerRequestActions
