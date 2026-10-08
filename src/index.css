@@ -477,3 +477,22 @@ button:focus-visible {
   flex-wrap: wrap;
   gap: 10px;
 }
+
+.request-panel {
+  margin-top: 32px;
+  padding-top: 24px;
+  border-top: 1px solid #e3e7df;
+}
+
+.request-panel h2 {
+  font-size: 22px;
+}
+
+.request-panel > p {
+  color: #536458;
+  line-height: 1.6;
+}
+
+.request-panel > .button {
+  margin-top: 12px;
+}

@@ -3,6 +3,8 @@ import { Link, useParams } from "react-router-dom";
 import { Wrench } from "lucide-react";
 import { apiRequest } from "../services/api";
 import type { Tool, ToolResponse } from "../types/tool";
+import RequestToolPanel from "../components/RequestToolPanel";
+
 
 export default function ToolDetailsPage() {
   const { id } = useParams<{ id: string }>();
@@ -130,6 +132,8 @@ export default function ToolDetailsPage() {
                 </dd>
               </div>
             </dl>
+
+            <RequestToolPanel key={tool._id} tool={tool} />
           </div>
         </article>
       ) : (
