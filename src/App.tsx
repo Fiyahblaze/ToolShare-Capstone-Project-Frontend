@@ -9,6 +9,8 @@ import NotFoundPage from "./pages/NotFoundPage";
 import ToolsPage from "./pages/ToolsPage";
 import ToolDetailsPage from "./pages/ToolDetailsPage";
 import CreateToolPage from "./pages/CreateToolPage";
+import EditToolPage from "./pages/EditToolPage";
+
 
 export default function App() {
   return (
@@ -23,9 +25,10 @@ export default function App() {
         <Route path="register" element={<RegisterPage />} />
 
         <Route element={<ProtectedRoute />}>
-          <Route path="tools/new" element={<CreateToolPage />} />
-          <Route path="dashboard" element={<DashboardPage />} />
-        </Route>
+           <Route path="tools/new" element={<CreateToolPage />} />
+           <Route path="tools/:id/edit" element={<EditToolPage />} />
+           <Route path="dashboard" element={<DashboardPage />} />
+           </Route>
 
         <Route path="*" element={<NotFoundPage />} />
       </Route>

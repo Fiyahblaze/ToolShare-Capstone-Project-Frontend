@@ -79,7 +79,9 @@ export default function DashboardPage() {
         <p role="status">Loading your listings...</p>
       ) : error ? (
         <div className="content-card">
-          <p className="form-error" role="alert">{error}</p>
+          <p className="form-error" role="alert">
+            {error}
+          </p>
           <button
             type="button"
             className="button button-primary"
@@ -99,7 +101,16 @@ export default function DashboardPage() {
       ) : (
         <div className="tool-grid">
           {tools.map((tool) => (
-            <ToolCard key={tool._id} tool={tool} />
+            <div key={tool._id} className="dashboard-tool">
+              <ToolCard tool={tool} />
+
+              <Link
+                to={`/tools/${tool._id}/edit`}
+                className="button button-secondary"
+              >
+                Edit Listing
+              </Link>
+            </div>
           ))}
         </div>
       )}

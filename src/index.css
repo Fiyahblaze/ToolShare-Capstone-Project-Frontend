@@ -439,3 +439,14 @@ button:focus-visible {
 .listing-form-card h1 {
   font-size: clamp(30px, 5vw, 42px);
 }
+
+.dashboard-tool {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.dashboard-tool .tool-card {
+  flex: 1;
+}
