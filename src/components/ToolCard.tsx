@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { MapPin, Wrench } from "lucide-react";
-import type { Tool } from "../types/tool";
+import { MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
+import ToolIllustration from "./ToolIllustration";
+import type { Tool } from "../types/tool";
 
 export default function ToolCard({ tool }: { tool: Tool }) {
   const [imageFailed, setImageFailed] = useState(false);
@@ -17,7 +18,12 @@ export default function ToolCard({ tool }: { tool: Tool }) {
             onError={() => setImageFailed(true)}
           />
         ) : (
-          <Wrench size={48} aria-hidden="true" />
+          <>
+            <ToolIllustration category={tool.category} />
+            <span className="illustration-label">
+              Sample illustration
+            </span>
+          </>
         )}
       </div>
 
@@ -47,12 +53,13 @@ export default function ToolCard({ tool }: { tool: Tool }) {
             {tool.available ? "Available" : "Unavailable"}
           </span>
         </div>
+
         <Link
-  to={`/tools/${tool._id}`}
-  className="button button-secondary tool-details-link"
->
-  View Details
-</Link>
+          to={`/tools/${tool._id}`}
+          className="button button-secondary tool-details-link"
+        >
+          View Details
+        </Link>
       </div>
     </article>
   );

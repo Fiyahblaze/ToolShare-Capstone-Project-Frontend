@@ -771,3 +771,148 @@ button:focus-visible {
     gap: 12px;
   }
 }
+
+/* Tool illustrations */
+.tool-image {
+  position: relative;
+}
+
+.tool-illustration {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.illustration-label {
+  position: absolute;
+  bottom: 10px;
+  left: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #536458;
+  font-size: 11px;
+}
+
+/* Home page */
+.home-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+  align-items: center;
+  gap: 40px;
+  padding: clamp(24px, 4vw, 48px);
+}
+
+.home-hero-copy {
+  min-width: 0;
+}
+
+.home-hero h1 {
+  font-size: clamp(38px, 5vw, 62px);
+}
+
+.home-hero .button {
+  gap: 10px;
+}
+
+.hero-note {
+  margin-top: 22px;
+  color: #426b4e;
+  font-size: 14px;
+}
+
+.hero-tool-display {
+  overflow: hidden;
+  border: 1px solid #d8e3d5;
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 16px 36px rgb(32 56 43 / 8%);
+}
+
+.hero-tool-display > .tool-illustration {
+  height: auto;
+}
+
+.hero-tool-caption {
+  padding: 24px;
+}
+
+.hero-tool-caption h2 {
+  margin: 12px 0;
+  font-size: 23px;
+  line-height: 1.3;
+}
+
+.hero-tool-caption p {
+  margin-bottom: 0;
+  color: #536458;
+  line-height: 1.6;
+}
+
+.home-benefits {
+  margin-top: 48px;
+}
+
+.home-section-heading {
+  max-width: 650px;
+  margin-bottom: 24px;
+}
+
+.home-section-heading h2 {
+  font-size: clamp(26px, 3vw, 34px);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.benefit-card {
+  padding: 26px;
+  border: 1px solid #e3e7df;
+  border-radius: 16px;
+  background: #ffffff;
+}
+
+.benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 14px;
+  background: #eaf1e8;
+  color: #246443;
+}
+
+.benefit-card h3 {
+  margin: 20px 0 12px;
+  font-size: 20px;
+}
+
+.benefit-card p {
+  margin: 0;
+  color: #536458;
+  line-height: 1.7;
+}
+
+@media (max-width: 800px) {
+  .home-hero {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .hero-tool-display {
+    width: 100%;
+    max-width: 440px;
+    justify-self: center;
+  }
+
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}
