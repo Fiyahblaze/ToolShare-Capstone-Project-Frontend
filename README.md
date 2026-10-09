@@ -7,7 +7,8 @@ ToolShare is my full-stack MERN capstone project. It connects people who need to
 - Register, log in, and log out.
 - Browse tools and view listing details.
 - Create, edit, and delete your own tool listings.
-- Submit, view, edit, cancel, and delete pending rental requests.
+- Submit and view rental requests.
+- Edit, cancel, and delete your pending rental requests.
 - Approve or decline incoming requests.
 - Confirm tool returns.
 - Manage listings and requests from a personal dashboard.
@@ -35,18 +36,18 @@ cp .env.example .env
 Set the API URL in `.env`:
 
 ```env
-VITE_API_URL=https://toolshare-capstone-project-backend.onrender.com/api
+VITE_API_URL=http://localhost:3001/api
 ```
 
-Start the app:
+Run the backend locally in a separate terminal using its README instructions. Set the backend's `FRONTEND_URL` to `http://localhost:5173`.
+
+Start the frontend:
 
 ```bash
 npm run dev
 ```
 
 Open http://localhost:5173.
-
-To use a local backend, set `VITE_API_URL` to `http://localhost:3001/api` and run the backend separately.
 
 ## Checks
 
@@ -57,11 +58,16 @@ npm run build
 
 ## Project Links
 
+- [Live ToolShare App](https://toolshare-capstone-project-frontend.onrender.com)
 - [Frontend Repository](https://github.com/Fiyahblaze/ToolShare-Capstone-Project-Frontend)
 - [Backend Repository](https://github.com/Fiyahblaze/ToolShare-Capstone-Project-Backend)
 - [Backend Health Check](https://toolshare-capstone-project-backend.onrender.com/health)
 
-The frontend deployment link will be added after deployment.
+## API Documentation
+
+The backend README describes all authentication, tool, and rental request endpoints, including which routes require authentication.
+
+[View API Documentation](https://github.com/Fiyahblaze/ToolShare-Capstone-Project-Backend#api-routes)
 
 ## What I Learned
 
